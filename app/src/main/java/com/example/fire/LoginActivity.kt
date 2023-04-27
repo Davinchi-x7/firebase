@@ -50,5 +50,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
         }
+        Reg_btn.setOnClickListener {
+            val start = Intent(this, Register::class.java)
+            startActivity(start)
+            finish()
+        }
     }
 }

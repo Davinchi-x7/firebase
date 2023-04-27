@@ -45,7 +45,7 @@ class Register : AppCompatActivity() {
                         startActivity(gotologin)
                         finish()
                     } else {
-                        Toast.makeText(this, "Failed to create user", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Failed to create user/check your internet connection", Toast.LENGTH_SHORT).show()
                     }
 
                 }

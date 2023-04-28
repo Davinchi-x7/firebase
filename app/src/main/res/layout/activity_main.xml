@@ -2,33 +2,83 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/theme_switch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
 
-
-
-    <EditText
-        android:id="@+id/EDT_TXT"
+    <Switch
+        android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="193dp"
-        android:ems="10"
-        android:hint="Enter data"
-        android:inputType="text"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="28dp"
+        android:text="Darkmode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_1"
+    <EditText
+        android:id="@+id/edt_car_make"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="75dp"
-        android:text="SEND"
-        app:layout_constraintStart_toStartOf="@+id/EDT_TXT"
-        app:layout_constraintTop_toBottomOf="@+id/EDT_TXT" />
+        android:layout_marginBottom="53dp"
+        android:ems="10"
+        android:hint="Enter Car Make"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/edt_car_model"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_car_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="Enter Car Model"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/edt_price"
+        app:layout_constraintStart_toStartOf="@+id/edt_car_make" />
+
+    <EditText
+        android:id="@+id/edt_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:hint="Enter Car Price"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btn_uploaddetails"
+        app:layout_constraintEnd_toEndOf="@+id/edt_car_model" />
+
+    <Button
+        android:id="@+id/btn_uploadphoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="200dp"
+        android:text="UPLOAD PHOTO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_viewcar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:text="VIEW CAR DETAILS"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_uploaddetails" />
+
+    <Button
+        android:id="@+id/btn_uploaddetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="UPLOAD CAR DETAILS"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_uploadphoto"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

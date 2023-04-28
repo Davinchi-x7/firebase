@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
         btn_view = findViewById(R.id.btn_viewcar)
 
         //initialize firebase
-        var database = FirebaseDatabase.getInstance()
-        var databaseReference = database.reference
+          var database = FirebaseDatabase.getInstance()
+          var databaseRef = database.getReference("Cars")
 
 
 
@@ -38,7 +38,26 @@ class MainActivity : AppCompatActivity() {
 
         }
         Upload_car_data.setOnClickListener {
+            var carmake = Make.text.toString().trim()
+            var carmodel = C_Model.text.toString().trim()
+            var carprice = Price.text.toString().trim()
 
+            if (carmake.isEmpty() || carmodel.isEmpty() || carprice.isEmpty()){
+                Toast.makeText(this, "cannot submit an empty field", Toast.LENGTH_SHORT).show()
+            }else{
+                //saving info to firebase db
+                var usercar = CAR(carmake,carmodel,carprice)
+                var ref = FirebaseDatabase.getInstance().getReference().child("Cars")
+                
+                ref.setValue(usercar).addOnCompleteListener(){
+                    if (it.isSuccessful){
+                        Toast.makeText(this, "Car Data Uploaded Successfully", Toast.LENGTH_SHORT).show()
+                    }else{
+                        Toast.makeText(this, "Failed to save data", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+            }
         }
         btn_view.setOnClickListener {
 

@@ -1,8 +1,10 @@
 package com.example.fire
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -35,7 +37,8 @@ class MainActivity : AppCompatActivity() {
 
 
         upload_photo.setOnClickListener {
-
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(takePictureIntent, 1)
         }
         Upload_car_data.setOnClickListener {
             var carmake = Make.text.toString().trim()

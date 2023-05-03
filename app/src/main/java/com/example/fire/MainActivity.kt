@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var upload_photo:Button
     lateinit var Upload_car_data:Button
     lateinit var btn_view:Button
+    lateinit var dk_mode:Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -29,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         upload_photo = findViewById(R.id.btn_uploadphoto)
         Upload_car_data = findViewById(R.id.btn_uploaddetails)
         btn_view = findViewById(R.id.btn_viewcar)
-
+        dk_mode = findViewById(R.id.dk_mode_switch)
         //initialize firebase
           var database = FirebaseDatabase.getInstance()
           var databaseRef = database.getReference("Cars")
@@ -75,7 +77,9 @@ class MainActivity : AppCompatActivity() {
        // }
 
 
+        dk_mode.setOnClickListener {
 
+        }
 
     }
 }

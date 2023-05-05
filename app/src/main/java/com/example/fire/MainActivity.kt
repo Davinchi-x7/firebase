@@ -5,10 +5,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ListView
 import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 class MainActivity : AppCompatActivity() {
     lateinit var Make:EditText
@@ -35,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         //initialize firebase
           var database = FirebaseDatabase.getInstance()
           var databaseRef = database.getReference("Cars")
+
+
 
 
 
@@ -65,7 +71,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         btn_view.setOnClickListener {
-
+            var view = Intent(this,Db_view_items::class.java)
+            startActivity(view)
+            finish()
         }
 
        // btn_save_data.setOnClickListener {
